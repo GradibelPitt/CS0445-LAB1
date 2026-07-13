@@ -1,0 +1,5 @@
+.venv/
+__pycache__/
+*.pyc
+data/irvine.db
+.DS_Store
