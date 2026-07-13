@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Irvine Atlas · 地图探索</title>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/assets/map.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/"><span class="mark">IA</span><span><b>Irvine Atlas</b><small>尔湾生活全攻略</small></span></a>
+    <input id="mapSearch" placeholder="搜索地点、区域、类别…">
+    <nav><a href="/">卡片浏览</a><a class="active" href="/map">地图探索</a></nav>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-head">
+        <div><p class="eyebrow">EXPLORE IRVINE</p><h1>地图探索</h1></div>
+        <span id="visibleCount" class="count">0</span>
+      </div>
+      <div class="filters">
+        <select id="mapDistrict"><option value="">全部区域</option></select>
+        <select id="mapCategory"><option value="">全部类别</option></select>
+      </div>
+      <p class="hint">点击地图标记或地点卡片加入路线。再次点击可取消。</p>
+      <div id="placeList" class="place-list"></div>
+    </aside>
+
+    <section class="map-wrap">
+      <div id="map"></div>
+      <div class="map-note">地图数据 © OpenStreetMap contributors</div>
+    </section>
+
+    <aside class="route-panel">
+      <div class="route-title"><div><p class="eyebrow">PUBLIC TRANSIT</p><h2>公共交通规划</h2></div><button id="clearRoute" class="text-btn">清空</button></div>
+      <p class="route-help">选择两个或多个地点后，系统会按照选择顺序生成分段公共交通路线。</p>
+      <div id="selectedStops" class="selected-stops"></div>
+      <div id="routeSummary" class="route-summary empty">至少选择两个地点</div>
+    </aside>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/assets/map.js"></script>
+</body>
+</html>
