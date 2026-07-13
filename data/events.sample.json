@@ -1,0 +1,5 @@
+[
+{"id":"sample-city-events","title":"City of Irvine Events Calendar","venue":"Citywide","district":"Irvine","starts_at":"2026-07-15T09:00:00-07:00","ends_at":null,"url":"https://www.cityofirvine.org/events","source":"City of Irvine","category":"城市活动","image":null,"updated_at":"2026-07-13"},
+{"id":"sample-spectrum-events","title":"Irvine Spectrum Center Events","venue":"Irvine Spectrum Center","district":"Irvine Spectrum","starts_at":"2026-07-16T10:00:00-07:00","ends_at":null,"url":"https://www.irvinespectrumcenter.com/events-promotions","source":"Irvine Spectrum","category":"娱乐购物","image":null,"updated_at":"2026-07-13"},
+{"id":"sample-uci-events","title":"UCI Public Events","venue":"UC Irvine","district":"UCI / University Town Center","starts_at":"2026-07-17T10:00:00-07:00","ends_at":null,"url":"https://events.uci.edu","source":"UC Irvine","category":"校园活动","image":null,"updated_at":"2026-07-13"}
+]
