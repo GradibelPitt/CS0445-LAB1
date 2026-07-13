@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 DB = DATA / "irvine.db"
 
-app = FastAPI(title="Irvine Life Guide", version="1.0.0")
+app = FastAPI(title="Irvine Life Guide", version="1.1.0")
 app.mount("/assets", StaticFiles(directory=ROOT / "app" / "static"), name="assets")
 
 
@@ -73,14 +73,21 @@ def index() -> FileResponse:
     return FileResponse(ROOT / "app" / "static" / "index.html")
 
 
+@app.get("/map")
+def map_page() -> FileResponse:
+    return FileResponse(ROOT / "app" / "static" / "map.html")
+
+
 @app.get("/api/places")
 def places(district: str | None = None, category: str | None = None, q: str | None = None) -> list[dict[str, Any]]:
     sql = "SELECT p.*, EXISTS(SELECT 1 FROM favorites f WHERE f.item_type='place' AND f.item_id=p.id) favorite FROM places p WHERE 1=1"
     args: list[Any] = []
     if district:
-        sql += " AND district=?"; args.append(district)
+        sql += " AND district=?"
+        args.append(district)
     if category:
-        sql += " AND category=?"; args.append(category)
+        sql += " AND category=?"
+        args.append(category)
     if q:
         sql += " AND (name LIKE ? OR name_zh LIKE ? OR description LIKE ? OR description_zh LIKE ?)"
         args.extend([f"%{q}%"] * 4)
